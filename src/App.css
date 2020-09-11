@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'pokefont';
+  src: url('./assets/Pokemon Solid.ttf') format('truetype');
+} 
+
+.App {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: repeat ;
+  background-color: aliceblue;
+  padding-top: 4rem;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: #66B1DF !important ;
+}
+
+/*body {
+  font-family: 'pokefont';
+}*/
