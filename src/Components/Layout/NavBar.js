@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export default class NavBar extends Component {
@@ -8,7 +7,7 @@ export default class NavBar extends Component {
             <div>
                 <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
                     <Link to={`/`}>
-                    <a className="navbar-brand col-sm-3 col-md-2 mr-0 aligin-items-center">POKEMON PRIMERA GENERACION</a>
+                    <h1 className="navbar-brand col-sm-3 col-md-2 mr-0 aligin-items-center">POKEMON PRIMERA GENERACION</h1>
                     </Link>
                 </nav>
             </div>

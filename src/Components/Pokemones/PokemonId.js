@@ -82,7 +82,7 @@ export default class PokemonId extends Component {
                 default:
                     hp='';
             }
-            return;
+            return stat;
         });
 
         const height = Math.round(pokemonRes.data.height) /10; //metros
@@ -111,8 +111,8 @@ export default class PokemonId extends Component {
             res.data.flavor_text_entries.some(flavor => {
                 if (flavor.language.name === 'es'){
                     description = flavor.flavor_text;
-                    return;
                 }
+                return flavor;
             });
             
             const femaleRate = res.data['gender_rate'];
@@ -186,7 +186,7 @@ export default class PokemonId extends Component {
                     <div className="card-body">
                         <div className="row aling-items-center">
                             <div className="col-md-3">
-                                <img src={this.state.img} className="card-img-top rounder mx-auto mt-2"/>
+                                <img role="banner" alt="" src={this.state.img} className="card-img-top rounder mx-auto mt-2"/>
                             </div>
                             <div className="col-md-9">
                                 <h5 className="mx-auto">
@@ -198,8 +198,8 @@ export default class PokemonId extends Component {
                                     </div>
                                     <div className="col-12 col-md-9">
                                         <div className="progress">
-                                            <div className="progress-bar" role="progressBar" style={{ width: `${this.state.stats.hp}%`}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                <solid>{this.state.stats.hp}</solid>
+                                            <div  className="progress-bar" role="progressbar" style={{ width: `${this.state.stats.hp}%`}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <span>{this.state.stats.hp}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -210,8 +210,8 @@ export default class PokemonId extends Component {
                                     </div>
                                     <div className="col-12 col-md-9">
                                         <div className="progress">
-                                            <div className="progress-bar" role="progressBar" style={{ width: `${this.state.stats.attack}%`}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                <solid>{this.state.stats.attack}</solid>
+                                            <div className="progress-bar" role="progressbar" style={{ width: `${this.state.stats.attack}%`}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <span>{this.state.stats.attack}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -222,8 +222,8 @@ export default class PokemonId extends Component {
                                     </div>
                                     <div className="col-12 col-md-9">
                                         <div className="progress">
-                                            <div className="progress-bar" role="progressBar" style={{ width: `${this.state.stats.defense}%`}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                <solid>{this.state.stats.defense}</solid>
+                                            <div className="progress-bar" role="progressbar" style={{ width: `${this.state.stats.defense}%`}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <span>{this.state.stats.defense}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -234,8 +234,8 @@ export default class PokemonId extends Component {
                                     </div>
                                     <div className="col-12 col-md-9">
                                         <div className="progress">
-                                            <div className="progress-bar" role="progressBar" style={{ width: `${this.state.stats.speed}%`}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                <solid>{this.state.stats.speed}</solid>
+                                            <div className="progress-bar" role="progressbar" style={{ width: `${this.state.stats.speed}%`}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <span>{this.state.stats.speed}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -246,8 +246,8 @@ export default class PokemonId extends Component {
                                     </div>
                                     <div className="col-12 col-md-9">
                                         <div className="progress">
-                                            <div className="progress-bar" role="progressBar" style={{ width: `${this.state.stats.specialAttack}%`}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                <solid>{this.state.stats.specialAttack}</solid>
+                                            <div className="progress-bar" role="progressbar" style={{ width: `${this.state.stats.specialAttack}%`}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <span>{this.state.stats.specialAttack}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -258,8 +258,8 @@ export default class PokemonId extends Component {
                                     </div>
                                     <div className="col-12 col-md-9">
                                         <div className="progress">
-                                            <div className="progress-bar" role="progressBar" style={{ width: `${this.state.stats.specialDefense}%`}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                <solid>{this.state.stats.specialDefense}</solid>
+                                            <div className="progress-bar" role="progressbar" style={{ width: `${this.state.stats.specialDefense}%`}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                <span>{this.state.stats.specialDefense}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -307,11 +307,11 @@ export default class PokemonId extends Component {
                             </div>
                             <div className="col-md-6">
                                 <div className="progress">
-                                    <div className="progress-bar" role="progressBar" style={{ width: `${this.state.genderRatioFemale}%` , backgroundColor:'#FA299E'}} aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">
-                                        <solid>{this.state.genderRatioFemale}</solid>
+                                    <div className="progress-bar" role="progressbar" style={{ width: `${this.state.genderRatioFemale}%` , backgroundColor:'#FA299E'}} aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">
+                                        <span>{this.state.genderRatioFemale}</span>
                                     </div>
-                                    <div className="progress-bar" role="progressBar" style={{ width: `${this.state.genderRatioMale}%`, backgroundColor:'primary'}} aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                                        <solid>{this.state.genderRatioMale}</solid>
+                                    <div className="progress-bar" role="progressbar" style={{ width: `${this.state.genderRatioMale}%`, backgroundColor:'primary'}} aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                                        <span>{this.state.genderRatioMale}</span>
                                     </div>
                                 </div>
                             </div>
